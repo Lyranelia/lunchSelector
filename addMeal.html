@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>ADHEssen</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Zufälliges Gericht</a></li>
+                <li><a href="breakfast.html">Frühstück</a></li>
+                <li><a href="lunch.html">Hauptmahlzeit</a></li>
+                <li><a href="baked.html">Gebäck</a></li>
+                <li><a href="snacks.html">Snacks</a></li>
+                <li style="float:right"><a href="addMeal.html">Rezept hinzufügen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form>
+            <div>
+                <label>Titel: </label>
+                <input type="text" id="name">
+            </div>
+            
+            <div class="dropdown" id="dropdown">
+            <label>Kategorie: </label>
+            <button onclick="showDropdown()" class="drpdwnBtn">Dropdown</button>
+            
+            <ul class="dropdownContent" id="dropdownContent">
+                <li><button onclick="">alle</button></li>
+                <li><button onclick="">Frühstück</button></li>
+                <li><button onclick="">Hauptgericht</button></li>
+                <li><button onclick="">Snack</button></li>
+                <li><button onclick="">Kategorie Nudeln</button></li>
+                <li><button onclick="">Kategorie Reis</button></li>
+                <li><button onclick="">Kategorie Kartoffeln</button></li>
+                <li><button onclick="">Kategorie Suppen</button></li>
+                <li><button onclick="">Kategorie Bohnen</button></li>
+                <li><button onclick="">Kategorie Sonstiges</button></li>
+                <li><button onclick="">Gebäck</button></li>
+            </ul>
+
+            </div>
+            
+            <div>
+                <label>Zutaten: (in Arbeit)</label>
+                <!-- als Tabelle vielleicht -->
+                <input type="text" id="name">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="ADHEssenSelector.js"></script>
+</body>
+</html>

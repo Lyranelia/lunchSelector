@@ -11,12 +11,12 @@
         <h1>ADHEssen</h1>
         <nav class="navbar">
             <ul>
-                <li><a href="">Zufälliges Gericht</a></li>
-                <li><a href="">Frühstück</a></li>
-                <li><a href="">Hauptmahlzeit</a></li>
-                <li><a href="">Gebäck</a></li>
-                <li><a href="">Snacks</a></li>
-                <li style="float:right"><a href="">Rezept hinzufügen</a></li>
+                <li><a href="index.html">Zufälliges Gericht</a></li>
+                <li><a href="breakfast.html">Frühstück</a></li>
+                <li><a href="lunch.html">Hauptmahlzeit</a></li>
+                <li><a href="baked.html">Gebäck</a></li>
+                <li><a href="snacks.html">Snacks</a></li>
+                <li style="float:right"><a href="addMeal.html">Rezept hinzufügen</a></li>
             </ul>
         </nav>
     </header>
@@ -28,17 +28,17 @@
             <button onclick="showDropdown()" class="drpdwnBtn">Dropdown</button>
             <div>
                 <ul class="dropdownContent" id="dropdownContent">
-                    <li><p>alle</p></li>
-                    <li><p>Frühstück</p></li>
-                    <li><p>Hauptgericht</p></li>
-                    <li><p>Snack</p></li>
-                    <li><p>Kategorie Nudeln</p></li>
-                    <li><p>Kategorie Reis</p></li>
-                    <li><p>Kategorie Kartoffeln</p></li>
-                    <li><p>Kategorie Suppen</p></li>
-                    <li><p>Kategorie Bohnen</p></li>
-                    <li><p>Kategorie Sonstiges</p></li>
-                    <li><p>Kategorie Gebäck</p></li>
+                    <li><button onclick="getRandomMeal('all')">alle</button></li>
+                    <li><button onclick="getRandomMeal('Frühstück')">Frühstück</button></li>
+                    <li><button onclick="getRandomLunch()">Hauptgericht</button></li>
+                    <li><button onclick="getRandomMeal('Snack')">Snack</button></li>
+                    <li><button onclick="getRandomMeal('Nudeln')">Kategorie Nudeln</button></li>
+                    <li><button onclick="getRandomMeal('Reis')">Kategorie Reis</button></li>
+                    <li><button onclick="getRandomMeal('Kartoffeln')">Kategorie Kartoffeln</button></li>
+                    <li><button onclick="getRandomMeal('Suppen')">Kategorie Suppen</button></li>
+                    <li><button onclick="getRandomMeal('Bohnen')">Kategorie Bohnen</button></li>
+                    <li><button onclick="getRandomMeal('Sonstiges')">Kategorie Sonstiges</button></li>
+                    <li><button onclick="getRandomMeal('Gebäck')">Gebäck</button></li>
                 </ul>
             </div>
         </div>
@@ -47,7 +47,7 @@
     </main>
 
     <footer>
-
+        
     </footer>
     <script src="ADHEssenSelector.js"></script>
 </body>

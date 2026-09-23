@@ -7,6 +7,7 @@ header{
     color: #472d00;
     text-align: center;
     margin: 0;
+    box-shadow: 0px 5px 15px 5px #472d003d;
 }
 header h1{
     padding: 25px;
@@ -29,7 +30,7 @@ header h1{
     color: #472d00;
     margin: 0;
     transition-timing-function: ease;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 .navbar li{
     float: left; /* Makes <li> elements float next to each other und dann bei .navbar ul overflow hidden, damit items nicht aus der Liste fallen oder so */
@@ -43,6 +44,8 @@ header h1{
 .navbar ul li a:hover {
     background-color: #cba665;
     color: #352100;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 1px inset #d6b980;
 }
 .navbar ul li a:active {
     background-color: #b88341;
@@ -52,19 +55,20 @@ header h1{
 /* ---------------------------------------------------------------------------------------------- */
 
 main{
-    padding: 20px;
+    padding: 2.8%;
     flex: 1;
 }
-.dropdown button{
+.drpdwnBtn{
     border-radius: 10px;
-    font-size: 14pt;
+    font-size: 12.5pt;
     padding: 8px;
     border: none;
     background-color: #edd4a3;
+    box-shadow: 2px 2px 5px 2px #472d001b;
     transition-timing-function: ease;
     transition: 0.4s;
 }
-.dropdown button:hover{
+.drpdwnBtn:hover{
     background-color: #cba665;
     cursor: pointer;
     font-size: 16pt;
@@ -72,7 +76,7 @@ main{
     border-radius: 17px;
     box-shadow: 3px 3px 10px 3px #472d003d;
 }
-.dropdown button:active{
+.drpdwnBtn:active{
     background-color: #b88341;
 }
 
@@ -96,5 +100,13 @@ main{
 .dropdownContent.show li:hover{
     background-color: #cba665;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+.dropdownContent.show li:active{
+    background-color: #b88341;
+}
+.dropdownContent.show button{
+    background-color: transparent;
+    border: none;
+    font-size: 12pt;
 }
