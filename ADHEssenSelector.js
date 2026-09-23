@@ -16,6 +16,21 @@ class Meal {
     }
 }
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showDropdown() {
+    document.getElementById("dropdownContent").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.drpdwnBtn')) {
+        let openDropdown = document.getElementById("dropdownContent");       // "dropdowns" holt alle Elemente mit der Klasse "dropdownContent"
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+    }
+}
+
 function addMeal(name, category, ingredients) {
     let newMeal = new Meal (name, category, ingredients);
     lunches.push(newMeal);

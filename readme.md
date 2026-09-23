@@ -24,6 +24,8 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - Paragraph wie bisher von wegen "Bitte wähle deine Kategorie: "
 - Button, der beim Klicken dann folgendes darunter anzeigen lässt
 - ul-Element mit den entsprechenden li-Einträgen statt options
-- muss also auch JavaScript dafür einbauen
+- muss also auch JavaScript speziell dafür einbauen
+- Dropdownmenü gebaut, habe aber noch keine Funktion
 
+### weiter
 - leichte Transition für Farbveränderungen in Buttons und in der navbar eingebaut, damit es nicht so krass abgegrenzt ist, wirkt jetzt smoother
