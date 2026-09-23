@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ADHEssen Gerichtsauswahl</title>
+</head>
+<body>
+    <header>
+        <h1>ADHEssen</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="">Zufälliges Gericht</a></li>
+                <li><a href="">Frühstück</a></li>
+                <li><a href="">Hauptmahlzeit</a></li>
+                <li><a href="">Gebäck</a></li>
+                <li><a href="">Snacks</a></li>
+                <li style="float:right"><a href="">Rezept hinzufügen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Da ich scheinbar die hover-Option des Dropdownmenüs nicht stylen kann, muss ich eben ein eigenes bauen -->
+        <div class="dropdown" id="dropdown">
+            <p>Wähle deine gewünschte Kategorie: </p>
+            <button>Dropdown</button>
+            <div>
+                <ul class="dropdownContent" id="dropdownContent">
+                    <li><p>alle</p></li>
+                    <li><p>Frühstück</p></li>
+                    <li><p>Hauptgericht</p></li>
+                    <li><p>Snack</p></li>
+                    <li><p>Kategorie Nudeln</p></li>
+                    <li><p>Kategorie Reis</p></li>
+                    <li><p>Kategorie Kartoffeln</p></li>
+                    <li><p>Kategorie Suppen</p></li>
+                    <li><p>Kategorie Bohnen</p></li>
+                    <li><p>Kategorie Sonstiges</p></li>
+                    <li><p>Kategorie Gebäck</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="output" id="output"></div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

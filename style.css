@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header{
+    background-color: #edd4a3;
+    color: #472d00;
+    text-align: center;
+    margin: 0;
+}
+header h1{
+    padding: 15px;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+.navbar ul{
+    list-style-type: none;
+    background-color: #d6b980;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+}
+.navbar a{
+    text-decoration: none;
+    padding: 15px;
+    color: #472d00;
+    margin: 0;
+    transition-timing-function: ease;
+    transition: 0.4s;
+}
+.navbar li{
+    float: left; /* Makes <li> elements float next to each other und dann bei .navbar ul overflow hidden, damit items nicht aus der Liste fallen oder so */
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.navbar ul{
+    position: sticky;
+    top: 0;
+}
+.navbar ul li a:hover {
+    background-color: #cba665;
+    color: #352100;
+}
+.navbar ul li a:active {
+    background-color: #b88341;
+    color: #281900;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+main{
+    padding: 20px;
+    flex: 1;
+}
+.dropdown button{
+    border-radius: 10px;
+    padding: 8px;
+    border: none;
+    background-color: #edd4a3;
+    
+    transition-timing-function: ease;
+    transition: 0.4s;
+}
+.dropdown button:hover{
+    background-color: #cba665;
+    cursor: pointer;
+}
+.dropdown button:active{
+    background-color: #b88341;
+}
+.dropdownContent button:hover{
+    background-color: #472d00;
+    color: #edd4a3;
+}
+
+
