@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <div class="balken"></div>
         <h1>ADHEssen</h1>
         <nav class="navbar">
             <ul>
@@ -25,20 +26,20 @@
         <!-- Da ich scheinbar die hover-Option des Dropdownmenüs nicht stylen kann, muss ich eben ein eigenes bauen -->
         <div class="dropdown" id="dropdown">
             <p>Wähle deine gewünschte Kategorie: </p>
-            <button onclick="showDropdown()" class="drpdwnBtn">Dropdown</button>
+            <button onclick="showDropdown()" class="drpdwnBtn">Kategorie</button>
             <div>
                 <ul class="dropdownContent" id="dropdownContent">
-                    <li><button onclick="getRandomMeal('all')">alle</button></li>
-                    <li><button onclick="getRandomMeal('Frühstück')">Frühstück</button></li>
-                    <li><button onclick="getRandomLunch()">Hauptgericht</button></li>
-                    <li><button onclick="getRandomMeal('Snack')">Snack</button></li>
-                    <li><button onclick="getRandomMeal('Nudeln')">Kategorie Nudeln</button></li>
-                    <li><button onclick="getRandomMeal('Reis')">Kategorie Reis</button></li>
-                    <li><button onclick="getRandomMeal('Kartoffeln')">Kategorie Kartoffeln</button></li>
-                    <li><button onclick="getRandomMeal('Suppen')">Kategorie Suppen</button></li>
-                    <li><button onclick="getRandomMeal('Bohnen')">Kategorie Bohnen</button></li>
-                    <li><button onclick="getRandomMeal('Sonstiges')">Kategorie Sonstiges</button></li>
-                    <li><button onclick="getRandomMeal('Gebäck')">Gebäck</button></li>
+                    <li><button onclick="selectCategory('alle'); getRandomMeal('all');">alle</button></li>
+                    <li><button onclick="selectCategory('Frühstück'); getRandomMeal('Frühstück')">Frühstück</button></li>
+                    <li><button onclick="selectCategory('Hauptgericht'); getRandomMeal()">Hauptgericht</button></li>
+                    <li><button onclick="selectCategory('Snack'); getRandomMeal('Snack')">Snack</button></li>
+                    <li><button onclick="selectCategory('Hauptgericht: Nudeln'); getRandomMeal('Nudeln')">Kategorie Nudeln</button></li>
+                    <li><button onclick="selectCategory('Hauptgericht: Reis'); getRandomMeal('Reis')">Kategorie Reis</button></li>
+                    <li><button onclick="selectCategory('Hauptgericht: Kartoffeln'); getRandomMeal('Kartoffeln')">Kategorie Kartoffeln</button></li>
+                    <li><button onclick="selectCategory('Hauptgericht: Suppen'); getRandomMeal('Suppen')">Kategorie Suppen</button></li>
+                    <li><button onclick="selectCategory('Hauptgericht: Bohnen'); getRandomMeal('Bohnen')">Kategorie Bohnen</button></li>
+                    <li><button onclick="selectCategory('Hauptgericht: Sonstiges'); getRandomMeal('Sonstiges')">Kategorie Sonstiges</button></li>
+                    <li><button onclick="selectCategory('Gebäck'); getRandomMeal('Gebäck')">Gebäck</button></li>
                 </ul>
             </div>
         </div>
@@ -47,7 +48,9 @@
     </main>
 
     <footer>
-        
+        <a href="https://github.com/Lyranelia/"><img src="./src/GitHub Logo.png" width="2%" alt="GitHub Logo">: Lyranelia</a>
+        <a href="https://lyranelia.itch.io/"><img src="./src/itchio logo.png" width="2%" alt="itch.io Logo">: Lyranelia</a>
+        <div class="balken"></div>
     </footer>
     <script src="ADHEssenSelector.js"></script>
 </body>

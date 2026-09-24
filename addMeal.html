@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <div class="balken"></div>
         <h1>ADHEssen</h1>
         <nav class="navbar">
             <ul>
@@ -30,20 +31,18 @@
             
             <div class="dropdown" id="dropdown">
             <label>Kategorie: </label>
-            <button onclick="showDropdown()" class="drpdwnBtn">Dropdown</button>
+            <button type="button" onclick="showDropdown()" class="drpdwnBtn" id="drpdwnBtnAddMeal">Kategorie</button>
             
-            <ul class="dropdownContent" id="dropdownContent">
-                <li><button onclick="">alle</button></li>
-                <li><button onclick="">Frühstück</button></li>
-                <li><button onclick="">Hauptgericht</button></li>
-                <li><button onclick="">Snack</button></li>
-                <li><button onclick="">Kategorie Nudeln</button></li>
-                <li><button onclick="">Kategorie Reis</button></li>
-                <li><button onclick="">Kategorie Kartoffeln</button></li>
-                <li><button onclick="">Kategorie Suppen</button></li>
-                <li><button onclick="">Kategorie Bohnen</button></li>
-                <li><button onclick="">Kategorie Sonstiges</button></li>
-                <li><button onclick="">Gebäck</button></li>
+            <ul class="dropdownContent" id="dropdownContent" style="width: 18%;">
+                <li><button type="button" onclick="selectCategory('Frühstück')">Frühstück</button></li>
+                <li><button type="button" onclick="selectCategory('Snack')">Snack</button></li>
+                <li><button type="button" onclick="selectCategory('Nudeln')">Hauptgericht: Nudeln</button></li>
+                <li><button type="button" onclick="selectCategory('Reis')">Hauptgericht: Reis</button></li>
+                <li><button type="button" onclick="selectCategory('Kartoffeln')">Hauptgericht: Kartoffeln</button></li>
+                <li><button type="button" onclick="selectCategory('Suppen')">Hauptgericht: Suppen</button></li>
+                <li><button type="button" onclick="selectCategory('Bohnen')">Hauptgericht: Bohnen</button></li>
+                <li><button type="button" onclick="selectCategory('Sonstiges')">Hauptgericht: Sonstiges</button></li>
+                <li><button type="button" onclick="selectCategory('Gebäck')">Gebäck</button></li>
             </ul>
 
             </div>
@@ -51,12 +50,18 @@
             <div>
                 <label>Zutaten: (in Arbeit)</label>
                 <!-- als Tabelle vielleicht -->
-                <input type="text" id="name">
+                <input type="text" id="ingredients">
+            </div>
+            <div>
+                <button type="submit" onclick="" class="submitBtn">Rezept hinzufügen</button>
             </div>
         </form>
     </main>
 
     <footer>
+        <a href="https://github.com/Lyranelia/"><img src="./src/GitHub Logo.png" width="2%" alt="GitHub Logo">: Lyranelia</a>
+        <a href="https://lyranelia.itch.io/"><img src="./src/itchio logo.png" width="2%" alt="itch.io Logo">: Lyranelia</a>
+        <div class="balken"></div>
 
     </footer>
     <script src="ADHEssenSelector.js"></script>

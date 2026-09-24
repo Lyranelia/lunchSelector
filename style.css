@@ -9,6 +9,11 @@ header{
     margin: 0;
     box-shadow: 0px 5px 15px 5px #472d003d;
 }
+.balken{
+    width: 100%;
+    height: 0.5px;
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgb(38, 245, 241) 40%, rgb(7, 213, 245) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);
+}
 header h1{
     padding: 25px;
     margin: 0;
@@ -64,7 +69,6 @@ main{
     padding: 8px;
     border: none;
     background-color: #edd4a3;
-    box-shadow: 2px 2px 5px 2px #472d001b;
     transition-timing-function: ease;
     transition: 0.4s;
 }
@@ -74,39 +78,114 @@ main{
     font-size: 16pt;
     padding: 15px;
     border-radius: 17px;
-    box-shadow: 3px 3px 10px 3px #472d003d;
 }
 .drpdwnBtn:active{
     background-color: #b88341;
 }
 
-.dropdownContent{
-    display: none;
-    list-style-type: none;
-    background-color: #edd4a3;
-    color: #352100;
+#drpdwnBtnAddMeal, .submitBtn{
     border-radius: 10px;
+    font-size: 12.5pt;
+    padding: 8px;
+    border: none;
+    background-color: #edd4a3;
     transition-timing-function: ease;
     transition: 0.4s;
-    box-shadow: 5px 5px 15px 5px #472d003d;
+}
+#drpdwnBtnAddMeal:hover, .submitBtn:hover{
+    background-color: #cba665;
+    cursor: pointer;
+    font-size: 14pt;
+    padding: 11px;
+    border-radius: 14px;
+}
+#drpdwnBtnAddMeal:active, .submitBtn:active{
+    background-color: #b88341;
+}
+
+.dropdownContent{
+    display: none;
+    transition-timing-function: ease;
+    transition: 0.4s;
 }
 .dropdownContent.show{
     display: block;
+    position: absolute;
+    z-index: 5;
+    margin-left: 18%;
+    margin-top: 24%;
     width: 15%;
+    background-color: #edd4a3;
+    color: #352100;
+    border-radius: 10px;
+    list-style-type: none;
+    box-shadow: 5px 5px 15px 5px #472d003d;
 }
-.dropdownContent.show li{
+.dropdownContent.show button{
+    background-color: transparent;
+    text-align: left;
+    border: none;
+    font-size: 12pt;
+    width: 100%;
+    height: 100%;
     padding: 5px;
 }
-.dropdownContent.show li:hover{
+.dropdownContent.show button:hover{
     background-color: #cba665;
     cursor: pointer;
     border-radius: 10px;
 }
-.dropdownContent.show li:active{
+.dropdownContent.show button:active{
     background-color: #b88341;
 }
-.dropdownContent.show button{
-    background-color: transparent;
+
+/* ---------------------------------------------------------------------------------------------- */
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+form > div{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 5px;
+}
+form label{
+    width: 15%;
+    flex-shrink: 0;
+    text-align: right;
+}
+form input, form button,
+form .dropdown{
+    flex: 0.4;
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
     border: none;
-    font-size: 12pt;
+    background-color: #f9e6c0;
+    color: #352100;
+    font-size: 13.5pt;
+}
+
+.submitBtn{   /* erbt alles von weiter oben bei #drpdwnBtnAddMeal */
+    flex: 0.5;
+    margin-top: 3.5%;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #edd4a3;
+    width: 100%;
+    text-align: center;
+}
+footer a{
+    text-decoration: none;
+    color: #352100;
+    padding: 8px;
 }
