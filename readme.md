@@ -35,4 +35,8 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - noch paar kosmetische Dinge gemacht, und das Dropdownmenü von Paragraphen in Listen (Paragraphen sowieso mega unnötig gewesen) zu Listeneinträgen mit Buttons für bessere Funktionalität und Inklusion wegen Screenreadern und so geändert
 - jetzt werden dem Dropdownmenü Funktionen hinzugefügt, whooo
 - um die Funktionalität zu testen, müssen dann allerdings noch einige Rezepte hinzugefügt werden, aber das kann auch morgen passieren, denn ich kann gerade nur auf die Rezepte in meinem Kopf zugreifen, wobei, die reichen ja für nen Test
-- nächstes Ziel: Formular für addMeal()
+
+## To-Do
+- Formular für addMeal()
+- gif für loading hinzufügen
+- nachgucken, was genau .querySelector() macht

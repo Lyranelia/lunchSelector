@@ -18,6 +18,8 @@ class Meal {
     }
 }
 
+const mealform = document.querySelector("form")
+
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function showDropdown() {
@@ -33,11 +35,61 @@ function showDropdown() {
     }
 }*/
 
-// let selectedCategory = null;
+let selectedCategory = null;
 function selectCategory(category) {
-    document.querySelector('.drpdwnBtn' || '.drpdwnBtn2').textContent = category; // zeigt Auswahl im Button
+    selectedCategory = category;
+    document.querySelector('.drpdwnBtn').textContent = category; // zeigt Auswahl im Button
     document.getElementById("dropdownContent").classList.remove("show");
 }
+
+function addIngredientRow() {
+    const container = document.getElementById("ingredientsContainer");
+
+    const row = document.createElement("div");
+    row.className = "ingredientRow";
+
+    const ingredientInput = document.createElement("input");
+    ingredientInput.type = "text";
+    ingredientInput.placeholder = "Zutat";
+    ingredientInput.className = "ingredientName";
+
+    const amountInput = document.createElement("input");
+    amountInput.type = "text";
+    amountInput.placeholder = "Menge (optional)";
+    amountInput.className = "ingredientAmount";
+
+    const removeBtn = document.createElement("button");
+    removeBtn.type = "button";
+    removeBtn.textContent = "✕";
+    removeBtn.className = "removeIngredientBtn";
+    removeBtn.onclick = () => row.remove();
+
+    row.appendChild(ingredientInput);
+    row.appendChild(amountInput);
+    row.appendChild(removeBtn);
+    container.appendChild(row);
+}
+
+function collectIngredients() {
+    const rows = document.querySelectorAll(".ingredientRow");
+    const ingredients = {};
+
+    rows.forEach(row => {
+        const name = row.querySelector(".ingredientName").value.trim();
+        const amount = row.querySelector(".ingredientAmount").value.trim();
+        if (name) { // leere/nicht ausgefüllte Zeilen ignorieren
+            ingredients[name] = amount; // amount kann leer sein
+        }
+    });
+
+    return ingredients;
+}
+
+// Direkt beim Laden schon eine erste Zeile anzeigen
+if (mealform) {
+    window.addEventListener("DOMContentLoaded", () => {
+    addIngredientRow();
+});}
 
 function addMeal(name, category, ingredients, isLunch) {
     let newMeal = new Meal (name, category, ingredients, isLunch);
@@ -45,10 +97,42 @@ function addMeal(name, category, ingredients, isLunch) {
     console.log(`Meal added: ${JSON.stringify(newMeal)}`)
     return meals;
 }
-/**
- * Wenn ich jetzt sowas wie const name = document.getElementById(hier das input-Element in addMeal)
- * nehme, funktioniert das dann?
- */
+
+if (mealform) {
+    mealform.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+
+        if (!name) {
+            alert("Bitte einen Titel eingeben!");
+            return;
+        }
+        if (!selectedCategory) {
+            alert("Bitte eine Kategorie auswählen!");
+            return;
+        }
+
+        const ingredients = collectIngredients();
+        if (Object.keys(ingredients).length === 0) {
+            alert("Bitte mindestens eine Zutat eintragen!");
+            return;
+        }
+
+        addMeal(name, selectedCategory, ingredients);
+
+        // Formular zurücksetzen
+        mealform.reset();
+        document.getElementById("ingredientsContainer").innerHTML = "";
+        addIngredientRow(); // wieder eine leere Zeile bereitstellen
+        document.getElementById("drpdwnBtnAddMeal").textContent = "Kategorie";
+        selectedCategory = null;
+
+        alert("Rezept hinzugefügt!");
+    });
+}
+
+
 
 let pumpkinSoup = new Meal("Kürbissuppe", "Suppen", {"Kürbis": "500 g", "Kartoffel": "200 g", "Süßkartoffel": "150 g", "Möhre": "1", "Salz": "1 TL", "Muskat": "1/2 TL", "Pfeffer": "2 TL", "Ingwer": "1 daumengroßes Stück"}, true)
 let muesli = addMeal("Müsli", "Frühstück", {"Müsli": "reichlich", "Milch": "reichlich", "Früchte": "Topping"}, false);

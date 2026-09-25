@@ -23,7 +23,7 @@
     </header>
 
     <main>
-        <form>
+        <form class="form">
             <div>
                 <label>Titel: </label>
                 <input type="text" id="name">
@@ -49,8 +49,10 @@
             
             <div>
                 <label>Zutaten: (in Arbeit)</label>
-                <!-- als Tabelle vielleicht -->
-                <input type="text" id="ingredients">
+                <div class="ingredientsWrapper">
+                    <div id="ingredientsContainer"></div>
+                    <button type="button" onclick="addIngredientRow()" class="drpdwnBtn" id="drpdwnBtnAddMeal">+ Zutat</button>
+                </div>
             </div>
             <div>
                 <button type="submit" onclick="" class="submitBtn">Rezept hinzufügen</button>
@@ -59,8 +61,8 @@
     </main>
 
     <footer>
-        <a href="https://github.com/Lyranelia/"><img src="./src/GitHub Logo.png" width="2%" alt="GitHub Logo">: Lyranelia</a>
-        <a href="https://lyranelia.itch.io/"><img src="./src/itchio logo.png" width="2%" alt="itch.io Logo">: Lyranelia</a>
+        <a href="https://github.com/Lyranelia/" target="_blank"><img src="./src/GitHub Logo.png" width="2%" alt="GitHub Logo">: Lyranelia</a>
+        <a href="https://lyranelia.itch.io/" target="_blank"><img src="./src/itchio logo.png" width="2%" alt="itch.io Logo">: Lyranelia</a>
         <div class="balken"></div>
 
     </footer>
