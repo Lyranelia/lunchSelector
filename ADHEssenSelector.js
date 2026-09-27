@@ -3,16 +3,14 @@ let meals = []
 class Meal {
     name;               // string
     category;           // string
-    ingredients;        // object {"Zutat": "Mengenangabe"}
+    ingredients;        // object {"Zutat": "Mengenangabe"} - ne doch nicht, Array reicht
     id = 1;
-    isLunch;              // true or false
     static nextId = 1;  // Instanz der Klasse, nicht des einzelnen Klässlers
 
-    constructor(name, category, ingredients, isLunch) {
+    constructor(name, category, ingredients) {
         this.name = name,
         this.category = category,
         this.ingredients = ingredients,
-        this.isLunch = isLunch,
         this.id = Meal.nextId,
         Meal.nextId += 1
     }
@@ -50,13 +48,8 @@ function addIngredientRow() {
 
     const ingredientInput = document.createElement("input");
     ingredientInput.type = "text";
-    ingredientInput.placeholder = "Zutat";
+    ingredientInput.placeholder = "500 g Kürbis";
     ingredientInput.className = "ingredientName";
-
-    const amountInput = document.createElement("input");
-    amountInput.type = "text";
-    amountInput.placeholder = "Menge (optional)";
-    amountInput.className = "ingredientAmount";
 
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
@@ -65,20 +58,18 @@ function addIngredientRow() {
     removeBtn.onclick = () => row.remove();
 
     row.appendChild(ingredientInput);
-    row.appendChild(amountInput);
     row.appendChild(removeBtn);
     container.appendChild(row);
 }
 
 function collectIngredients() {
     const rows = document.querySelectorAll(".ingredientRow");
-    const ingredients = {};
+    const ingredients = [];
 
     rows.forEach(row => {
         const name = row.querySelector(".ingredientName").value.trim();
-        const amount = row.querySelector(".ingredientAmount").value.trim();
         if (name) { // leere/nicht ausgefüllte Zeilen ignorieren
-            ingredients[name] = amount; // amount kann leer sein
+            ingredients.push(name); // amount kann leer sein
         }
     });
 
@@ -91,8 +82,8 @@ if (mealform) {
     addIngredientRow();
 });}
 
-function addMeal(name, category, ingredients, isLunch) {
-    let newMeal = new Meal (name, category, ingredients, isLunch);
+function addMeal(name, category, ingredients) {
+    let newMeal = new Meal (name, category, ingredients);
     meals.push(newMeal);
     console.log(`Meal added: ${JSON.stringify(newMeal)}`)
     return meals;
@@ -105,17 +96,17 @@ if (mealform) {
         const name = document.getElementById("name").value.trim();
 
         if (!name) {
-            alert("Bitte einen Titel eingeben!");
+            alert("Bitte trag einen Titel ein.");
             return;
         }
         if (!selectedCategory) {
-            alert("Bitte eine Kategorie auswählen!");
+            alert("Bitte wähle eine Kategorie aus.");
             return;
         }
 
         const ingredients = collectIngredients();
         if (Object.keys(ingredients).length === 0) {
-            alert("Bitte mindestens eine Zutat eintragen!");
+            alert("Bitte trag mindestens eine Zutat ein.");
             return;
         }
 
@@ -134,8 +125,8 @@ if (mealform) {
 
 
 
-let pumpkinSoup = new Meal("Kürbissuppe", "Suppen", {"Kürbis": "500 g", "Kartoffel": "200 g", "Süßkartoffel": "150 g", "Möhre": "1", "Salz": "1 TL", "Muskat": "1/2 TL", "Pfeffer": "2 TL", "Ingwer": "1 daumengroßes Stück"}, true)
-let muesli = addMeal("Müsli", "Frühstück", {"Müsli": "reichlich", "Milch": "reichlich", "Früchte": "Topping"}, false);
+let pumpkinSoup = new Meal("Kürbissuppe", "Suppen", ["500 g Kürbis", "200 g Kartoffel", "150 g Süßkartoffel", "1 Möhre", "1 TL Salz", "1/2 TL Muskat", "2 TL Pfeffer", "1 daumengroßes Stück Ingwer"])
+let muesli = addMeal("Müsli", "Frühstück", ["Müsli", "Milch", "Früchte"]);
 meals.push(pumpkinSoup)
 // console.log(pumpkinSoup.category + ": " + pumpkinSoup.name)
 
@@ -150,7 +141,7 @@ function getRandomMeal(category) {
         const random = meals[Math.floor(Math.random() * meals.length)];
         console.log(random.category + " - " + random.name + ": " + JSON.stringify(random.ingredients))
         const ingredientsList = Object.entries(random.ingredients)
-        .map(([ingredient, amount]) => `<li>${ingredient}: ${amount}</li>`)
+        .map(ingredient => `<li>${ingredient}</li>`)
         .join("");
 
         document.getElementById("output").innerHTML = `

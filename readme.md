@@ -10,6 +10,7 @@
 - Klasse is da, das' ja klasse
 - Klasse besteht aus "Name", "Kategorie" und {"Zutat": "Mengenangabe", "Zutat 2": "Mengenangabe", ...}
 - neue Instanz der Klasse wird in Array eingetragen
+- neues Konzept für die Zutaten: einfach ein Array: ["500 g Kürbis", "Handvoll Kartoffeln", "1 Möhre"]
 
 ### html
 - Startseite
@@ -37,6 +38,19 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - um die Funktionalität zu testen, müssen dann allerdings noch einige Rezepte hinzugefügt werden, aber das kann auch morgen passieren, denn ich kann gerade nur auf die Rezepte in meinem Kopf zugreifen, wobei, die reichen ja für nen Test
 
 ## To-Do
-- Formular für addMeal()
+- Formular für addMeal() funktional machen
+    - momentan nur lokal auf der page addMeal.html, sollte Daten in localStorage packen
+    - und dann auch ein .json für Downloads und Uploads
 - gif für loading hinzufügen
 - nachgucken, was genau .querySelector() macht
+- warum werden mir die Indizes angezeigt in den random Rezepten (also basically immer, wenn ich ein Rezept angezeigt bekommen will)
+- css: Länge und Flex der Form und des Kategorie-Buttons checken, da stimmt was nich
+
+## Gelernt
+- css: keyframes und animation für einen pulsierenden Button
+- css/html: aria-current="page", um anzuzeigen, welche Seite gerade offen ist (in der Navbar)
+- wiederholt: addEventListener usw., wie wir das u. a. in der Fahrschulapp hatten
+- css: wie man Variablen schreibt:
+    - muss mit "--" beginnen, z. B. --color-text
+    - globale Variablen in :root{} deklarieren
+    - aufgerufen wird dann mit var(--variable)

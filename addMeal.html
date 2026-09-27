@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
                 <li><a href="lunch.html">Hauptmahlzeit</a></li>
                 <li><a href="baked.html">Gebäck</a></li>
                 <li><a href="snacks.html">Snacks</a></li>
-                <li style="float:right"><a href="addMeal.html">Rezept hinzufügen</a></li>
+                <li style="float:right"><a href="addMeal.html" aria-current="page">Rezept hinzufügen</a></li>
             </ul>
         </nav>
     </header>
@@ -40,7 +40,6 @@
                 <li><button type="button" onclick="selectCategory('Reis')">Hauptgericht: Reis</button></li>
                 <li><button type="button" onclick="selectCategory('Kartoffeln')">Hauptgericht: Kartoffeln</button></li>
                 <li><button type="button" onclick="selectCategory('Suppen')">Hauptgericht: Suppen</button></li>
-                <li><button type="button" onclick="selectCategory('Bohnen')">Hauptgericht: Bohnen</button></li>
                 <li><button type="button" onclick="selectCategory('Sonstiges')">Hauptgericht: Sonstiges</button></li>
                 <li><button type="button" onclick="selectCategory('Gebäck')">Gebäck</button></li>
             </ul>
@@ -48,10 +47,10 @@
             </div>
             
             <div>
-                <label>Zutaten: (in Arbeit)</label>
+                <label>Zutaten: </label>
                 <div class="ingredientsWrapper">
                     <div id="ingredientsContainer"></div>
-                    <button type="button" onclick="addIngredientRow()" class="drpdwnBtn" id="drpdwnBtnAddMeal">+ Zutat</button>
+                    <button type="button" onclick="addIngredientRow()" class="addButton" id="addButton">+ Zutat</button>
                 </div>
             </div>
             <div>
@@ -61,8 +60,8 @@
     </main>
 
     <footer>
-        <a href="https://github.com/Lyranelia/" target="_blank"><img src="./src/GitHub Logo.png" width="2%" alt="GitHub Logo">: Lyranelia</a>
-        <a href="https://lyranelia.itch.io/" target="_blank"><img src="./src/itchio logo.png" width="2%" alt="itch.io Logo">: Lyranelia</a>
+        <a href="https://github.com/Lyranelia/" target="_blank"><img src="./src/GitHub Logo.png" width="2%" alt="GitHub Logo"> Lyranelia</a>
+        <a href="https://lyranelia.itch.io/" target="_blank"><img src="./src/itchio logo.png" width="2%" alt="itch.io Logo"> Lyranelia</a>
         <div class="balken"></div>
 
     </footer>
