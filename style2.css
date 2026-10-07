@@ -13,12 +13,11 @@ body{
     PALETTE
     ================================================================ */
 :root{
-    --color-bg: #edd4a3;        /*bg für background btw*/
-    --color-bg-hover: #cba665;
-    --color-bg-active: #b88341;
-    --color-text: #472d00;
-    --color-text-dark: #352100;
-    --color-input-bg: #f9e6c0;
+    --color-bg: #dedcd8;        /*bg für background btw*/
+    --color-bg-hover-and-input: #c1beb8;
+    --color-bg-active: #adaba7;
+    --color-text: #21201e;
+    --color-text-dark: #151412;
     --color-remove: #c7562d;
     --color-remove-hover: #a9431e;
     --color-remove-active: #933614;
@@ -38,6 +37,8 @@ header{
 }
 header h1{
     padding: 25px;
+    padding-top: 20px;
+    padding-bottom: 15px;
     margin: 0;
 }
 .balken{
@@ -51,7 +52,7 @@ header h1{
     ================================================================ */
 .navbar ul{
     list-style-type: none;
-    background-color: #d6b980;
+    background-color: var(--color-bg-hover-and-input);
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -73,10 +74,10 @@ header h1{
     opacity: 1;
 }
 .navbar ul li a:hover{
-    background-color: var(--color-bg-hover);
+    background-color: var(--color-bg-hover-and-input);
     color: var(--color-text-dark);
     border-radius: 8px;
-    box-shadow: 0px 0px 1px 1px inset #d6b980;
+    box-shadow: 0px 0px 1px 1px inset #c4d3d8;
 }
 .navbar ul li a:active{
     background-color: var(--color-bg-active);
@@ -97,10 +98,10 @@ main{
 }
 body::before{
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: -1;
-    height: 100vh;
+    /* height: 100vh; */
     background-image: url(./src/olive-oil-with-colorful-vegetables-grunge-textured-background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -135,7 +136,7 @@ body::before{
 
 .drpdwnBtn:hover{
     animation: pulse 0.8s ease;
-    background-color: var(--color-bg-hover);
+    background-color: var(--color-bg-hover-and-input);
     cursor: pointer;
 }
 .drpdwnBtn:active{
@@ -147,7 +148,7 @@ body::before{
 .removeIngredientBtn:hover,
 .addButton:hover{
     animation: pulseSmall 0.8s ease;
-    background-color: var(--color-bg-hover);
+    background-color: var(--color-bg-hover-and-input);
     cursor: pointer;
 }
 #drpdwnBtnAddMeal:active,
@@ -157,9 +158,12 @@ body::before{
     background-color: var(--color-bg-active);
 }
 
+/* ä tänschn, plies +++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 #drpdwnBtnAddMeal{
     flex: 0.552;
 }
+/* ä tänschn, plies +++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
 
 
 .removeIngredientBtn{
@@ -182,6 +186,8 @@ body::before{
     ================================================================ */
 .dropdown{
     position: relative;
+    display: flex;
+    gap: 10px;
 }
 .dropdownContent{
     display: none;
@@ -212,7 +218,7 @@ body::before{
     font-size: 12pt;
 }
 .dropdownContent.show button:hover{
-    background-color: var(--color-bg-hover);
+    background-color: var(--color-bg-hover-and-input);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -227,10 +233,10 @@ input{
     padding: 10px;
     border-radius: 10px;
     border: none;
-    background-color: var(--color-input-bg);
+    background-color: var(--color-bg-hover-and-input);
     color: var(--color-text-dark);
     font-size: 12.5pt;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 form{
@@ -249,16 +255,7 @@ form label{
     text-align: right;
 }
 
-/*
-    Wichtig für den Alignment-Fix:
-    Da `form` flex-direction: column ist, wirkt `flex` auf den direkten
-    Kindern (den Zeilen) nur auf die Höhe, nicht auf die Breite.
-    Name-Input und Kategorie-Button sind bisher nur zufällig gleich breit,
-    weil sie jeweils als einziges Element in ihrer Zeile automatisch den
-    ganzen Platz neben dem Label einnehmen. Damit die Zutaten-Spalte
-    garantiert genauso breit wird, geben wir allen drei Content-Elementen
-    explizit dieselbe Breite.
-*/
+
 #name,
 .dropdown,
 .ingredientsWrapper{
@@ -271,12 +268,7 @@ form label{
     gap: 8px;
 }
 
-/* Eine Zutaten-Zeile: Input + Remove-Button.
-    Der Button wird NICHT mehr im Flex-Layout mit dem Input um die
-    Breite konkurrieren gelassen (das hat den Input schmäler gemacht),
-    sondern per position:absolute direkt danach angehängt. So ist der
-    Input exakt so breit wie Name-Input/Kategorie-Button, und der
-    Remove-Button hängt einfach dran. */
+
 .ingredientRow{
     position: relative;
 }
@@ -301,6 +293,19 @@ form label{
     margin-top: 3.5%;
 }
 
+
+/*  ================================================================
+    RECIPE-OUTPUT
+    ================================================================ */
+.output:not(:empty){
+    padding: 4%;
+    padding-top: 1%;
+    background-color: #e1e0de8e;
+    color: var(--color-text);
+    border-radius: 20px;
+    width: fit-content;
+    margin: 1%;
+}
 
 /*  ================================================================
     FOOTER

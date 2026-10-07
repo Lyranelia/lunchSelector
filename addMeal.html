@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
-    <title>Document</title>
+    <title>ADHEssen</title>
 </head>
 <body>
     <header>
@@ -57,6 +57,10 @@
                 <button type="submit" onclick="" class="submitBtn">Rezept hinzufügen</button>
             </div>
         </form>
+        <div>
+            <input type="file" id="importFile" accept=".json" style="display: none;">
+            <button type="button" onclick="document.getElementById('importFile').click()" class="addButton" id="importFileBtn" title="Upload als .json-Datei">Rezepte hochladen</button>
+        </div>
     </main>
 
     <footer>

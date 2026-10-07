@@ -43,8 +43,8 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
     - und dann auch ein .json für Downloads und Uploads
 - gif für loading hinzufügen
 - nachgucken, was genau .querySelector() macht
-- warum werden mir die Indizes angezeigt in den random Rezepten (also basically immer, wenn ich ein Rezept angezeigt bekommen will)
 - css: Länge und Flex der Form und des Kategorie-Buttons checken, da stimmt was nich
+- done // (transparenten) Hintergrund für die Rezepte setzen, sodass die einfacher zu sehen sind auf dem Hintergrundbild
 
 ## Gelernt
 - css: keyframes und animation für einen pulsierenden Button
@@ -54,3 +54,5 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
     - muss mit "--" beginnen, z. B. --color-text
     - globale Variablen in :root{} deklarieren
     - aufgerufen wird dann mit var(--variable)
+- css: Pseudoklasse :empty, bzw., wie man nur ein nicht leeres Objekt mit :not(:empty){} anspricht und styles setzt
+- wie man .json-Dateien benutzt

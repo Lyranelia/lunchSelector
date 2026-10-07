@@ -1,0 +1,311 @@
+[
+  {
+    "name": "Müsli",
+    "category": "Frühstück",
+    "ingredients": [
+      "Müsli",
+      "vegane Milch",
+      "opt. Früchte"
+    ]
+  },
+  {
+    "name": "Overnight Oats",
+    "category": "Frühstück",
+    "ingredients": [
+      "Haferflocken oder Müslimischung",
+      "(TK)-Früchte"
+    ]
+  },
+  {
+    "name": "Rosinenbrot mit Marmelade",
+    "category": "Frühstück",
+    "ingredients": [
+      "Rosinenbrot",
+      "z. B. Pflaumenmus",
+      "opt. Margarine"
+    ]
+  },
+  {
+    "name": "Pilzsuppe",
+    "category": "Suppen",
+    "ingredients": [
+      "Pilze",
+      "Zwiebel",
+      "Nüsse",
+      "Pflanzenmilch"
+    ]
+  },
+  {
+    "name": "Zwiebelsuppe",
+    "category": "Suppen",
+    "ingredients": [
+      "Zwiebeln",
+      "opt. Pilze"
+    ]
+  },
+  {
+    "name": "Kartoffelsuppe",
+    "category": "Suppen",
+    "ingredients": [
+      "Kartoffeln",
+      "Zwiebel",
+      "opt. Möhre",
+      "Knoblauch"
+    ]
+  },
+  {
+    "name": "Linsen-Kokossuppe",
+    "category": "Suppen",
+    "ingredients": [
+      "175 g rote Linsen",
+      "1 Dose Kokosmilch",
+      "1 Dose Pizzatomaten",
+      "1 Zwiebel",
+      "600 ml Gemüsebrühe",
+      "3 TL Chilipulver",
+      "2 TL Kurkuma"
+    ]
+  },
+  {
+    "name": "Nudeln mit Pesto",
+    "category": "Nudeln",
+    "ingredients": [
+      "Nudeln",
+      "Pesto deiner Wahl",
+      "Salz"
+    ]
+  },
+  {
+    "name": "Nudeln mit Tomatensauce",
+    "category": "Nudeln",
+    "ingredients": [
+      "Nudeln",
+      "Block Tofu",
+      "Nüsse/Saaten/Kerne",
+      "1 Möhre",
+      "Zwiebel",
+      "Knoblauch",
+      "Tomatenmark",
+      "Passierte Tomaten",
+      "1 Dose gehackte Tomaten",
+      "opt. Creme Fraiche"
+    ]
+  },
+  {
+    "name": "One-Pot-Pasta",
+    "category": "Nudeln",
+    "ingredients": [
+      "Nudeln",
+      "Dose gehackte Tomaten",
+      "anderes Zeug, was gerade da ist"
+    ]
+  },
+  {
+    "name": "Instant-Ramen",
+    "category": "Nudeln",
+    "ingredients": [
+      "Packung Instant-Ramen",
+      "Sojasauce",
+      "Ingwer"
+    ]
+  },
+  {
+    "name": "Nudeln mit Sahnesauce / Spaghetti Carbonara",
+    "category": "Nudeln",
+    "ingredients": [
+      "Nudeln (Spaghetti)",
+      "Zwiebel",
+      "Knoblauch",
+      "Becher Sahne oder Kochcreme",
+      "opt. Schinkenwürfelersatz",
+      "opt. Kala Namak"
+    ]
+  },
+  {
+    "name": "Schnelle Nudeln mit Tomatensauce",
+    "category": "Nudeln",
+    "ingredients": [
+      "Nudeln",
+      "Dose Gehackte Tomaten",
+      "Zwiebel",
+      "kleine Dose Kichererbsen (opt.)"
+    ]
+  },
+  {
+    "name": "Gemüse-Reis-Pfanne",
+    "category": "Reis",
+    "ingredients": [
+      "1 Tasse Reis",
+      "Paprika",
+      "Dose gehackte Tomaten",
+      "Dose Kichererbsen",
+      "0,5 l Gemüsebrühe",
+      "opt. Zucchini",
+      "Kurkuma"
+    ]
+  },
+  {
+    "name": "Bartkartoffeln",
+    "category": "Kartoffeln",
+    "ingredients": [
+      "Kartoffeln",
+      "Paprikagewürz",
+      "Salz",
+      "Zwiebel",
+      "Knoblauch"
+    ]
+  },
+  {
+    "name": "Tütenkartoffelbrei",
+    "category": "Kartoffeln",
+    "ingredients": [
+      "Tüte Fertigkartoffelbrei",
+      "opt. Zwiebeln",
+      "opt. Pilze"
+    ]
+  },
+  {
+    "name": "Kartoffeln mit Bohnen",
+    "category": "Kartoffeln",
+    "ingredients": [
+      "4 mittelgroße Kartoffeln",
+      "1 Dose Baked Beans in Tomatensauce",
+      "1 Zwiebel",
+      "Salz",
+      "Pfeffer"
+    ]
+  },
+  {
+    "name": "Chili sin Carne",
+    "category": "Sonstiges",
+    "ingredients": [
+      "1 Dose Baked Beans*",
+      "1 Dose Chilibohnen*",
+      "1 Dose Mais",
+      "1 Dose Kidneybohnen oder Kichererbsen",
+      "Sojagranulat",
+      "Gemüsebrühe",
+      "Zwiebel",
+      "1 Dose gehackte Tomaten*",
+      "opt. Flüssigrauch"
+    ]
+  },
+  {
+    "name": "Ofengemüse",
+    "category": "Sonstiges",
+    "ingredients": [
+      "Kartoffeln",
+      "Möhre",
+      "Zucchini",
+      "Fenchel",
+      "Pilze"
+    ]
+  },
+  {
+    "name": "Überbackenes Toast",
+    "category": "Sonstiges",
+    "ingredients": [
+      "Toast",
+      "Aufschnitt",
+      "Zwiebel",
+      "veganer Käse",
+      "opt. Tomate, Pilz, anderes Gemüse"
+    ]
+  },
+  {
+    "name": "Grilled Cheese",
+    "category": "Sonstiges",
+    "ingredients": [
+      "Brot",
+      "veganer Käse",
+      "opt. Tomate"
+    ]
+  },
+  {
+    "name": "TK-Pizza",
+    "category": "Sonstiges",
+    "ingredients": [
+      "TK-Pizza",
+      "opt. mehr Belag"
+    ]
+  },
+  {
+    "name": "Wraps",
+    "category": "Sonstiges",
+    "ingredients": [
+      "Tortillas",
+      "Aufstrich",
+      "Feldsalat",
+      "Mais",
+      "opt. Reis",
+      "opt. Tofu"
+    ]
+  },
+  {
+    "name": "Pudding",
+    "category": "Snacks",
+    "ingredients": [
+      "Puddingpulver",
+      "Pflanzenmilch",
+      "vegane Sprühsahne",
+      "gehackte Schokolade oder Schoko-streusel"
+    ]
+  },
+  {
+    "name": "Gebratener Apfel",
+    "category": "Snacks",
+    "ingredients": [
+      "Apfel",
+      "Zimt",
+      "Zuckerzeug"
+    ]
+  },
+  {
+    "name": "Aufgeschnittener Apfel",
+    "category": "Snacks",
+    "ingredients": [
+      "Apfel"
+    ]
+  },
+  {
+    "name": "Knoblauchbrot",
+    "category": "Snacks",
+    "ingredients": [
+      "Brot",
+      "Knoblauchzehe",
+      "opt. Salz",
+      "opt. Margarine"
+    ]
+  },
+  {
+    "name": "Lila Blaubeer-Cookies",
+    "category": "Gebäck",
+    "ingredients": [
+      "90 g weiche Margarine",
+      "90 g Zucker",
+      "100 g TK-Blaubeeren, aufgetaut",
+      "150 g Mehl",
+      "1 TL Backpulver",
+      "1 Prise Salz",
+      "geriebene Zitronenschale",
+      "opt. Eine Handvoll frische Blaubeeren"
+    ]
+  },
+  {
+    "name": "Kirsch-Brownies",
+    "category": "Gebäck",
+    "ingredients": [
+      "200 g Mehl",
+      "45 g Backkakao",
+      "100 g Zucker",
+      "1 Pck. Vanillezucker",
+      "1/2 Pck. Backpulver(8 g)",
+      "100 g Öl (90 ml)",
+      "240 g Wasser / Kirschsaft aus Kirschenglas",
+      "Prise Salz",
+      "Spritzer Zitronensaft",
+      "100 g Schokolade",
+      "großes Glas Kirschen"
+    ]
+  }
+]

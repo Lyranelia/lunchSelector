@@ -1,4 +1,4 @@
-let meals = []
+let meals = JSON.parse(localStorage.getItem("meals")) || []
 
 class Meal {
     name;               // string
@@ -16,7 +16,13 @@ class Meal {
     }
 }
 
-const mealform = document.querySelector("form")
+
+function saveMeals() {
+    localStorage.setItem("meals", JSON.stringify(meals))
+}
+
+const mealform = document.querySelector("form");
+const importFileInput = document.querySelector("#importFile");
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
@@ -24,14 +30,14 @@ function showDropdown() {
     document.getElementById("dropdownContent").classList.toggle("show");
 }
 // Close the dropdown if the user clicks outside of it
-/*window.onclick = function(event) {
+window.onclick = function(event) {
     if (!event.target.matches('.drpdwnBtn')) {
         let openDropdown = document.getElementById("dropdownContent");       // "dropdowns" holt alle Elemente mit der Klasse "dropdownContent"
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show');
         }
     }
-}*/
+}
 
 let selectedCategory = null;
 function selectCategory(category) {
@@ -85,9 +91,45 @@ if (mealform) {
 function addMeal(name, category, ingredients) {
     let newMeal = new Meal (name, category, ingredients);
     meals.push(newMeal);
-    console.log(`Meal added: ${JSON.stringify(newMeal)}`)
+    saveMeals();
+    console.log(`Meal added: ${JSON.stringify(newMeal)}`);
     return meals;
 }
+
+if (importFileInput) {
+    console.log("Import-Listener wurde registriert.");
+    document.getElementById("importFile").addEventListener("change", function(event) {
+        console.log("Change-Event ausgelöst, Datei:", event.target.files[0]);
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            let importedMeals;
+            try {
+                importedMeals = JSON.parse(event.target.result);
+            }
+            catch (error) {
+                alert("Die Datei hat kein gültiges JSON-Format.");
+                console.error(error);
+                return;
+            }
+
+            if (!Array.isArray(importedMeals)) {
+                alert("Die Datei hat nicht das erwartete Format.\nErwartet: Array aus Rezepten.");
+                return;
+            }
+
+            importedMeals.forEach(meal => {
+                addMeal(meal.name, meal.category, meal.ingredients);
+            });
+
+            alert(`${importedMeals.length} Rezepte importiert!`);
+        };
+        reader.readAsText(file);
+    });
+}
+
 
 if (mealform) {
     mealform.addEventListener("submit", function(event) {
@@ -124,33 +166,38 @@ if (mealform) {
 }
 
 
+if (meals.length === 0) {
+    let pumpkinSoup = addMeal("Kürbissuppe", "Suppen", ["500 g Kürbis", "200 g Kartoffel", "150 g Süßkartoffel", "1 Möhre", "1 TL Salz", "1/2 TL Muskat", "2 TL Pfeffer", "1 daumengroßes Stück Ingwer"]);
+    let muesli = addMeal("Müsli", "Frühstück", ["Müsli", "Milch", "Früchte"]);
+}
 
-let pumpkinSoup = new Meal("Kürbissuppe", "Suppen", ["500 g Kürbis", "200 g Kartoffel", "150 g Süßkartoffel", "1 Möhre", "1 TL Salz", "1/2 TL Muskat", "2 TL Pfeffer", "1 daumengroßes Stück Ingwer"])
-let muesli = addMeal("Müsli", "Frühstück", ["Müsli", "Milch", "Früchte"]);
-meals.push(pumpkinSoup)
-// console.log(pumpkinSoup.category + ": " + pumpkinSoup.name)
 
 
 function getRandomMeal(category) {
-    if (meals.length === 0) {
-        console.log("Keine Mahlzeiten verfügbar.")
-        document.getElementById("output").textContent = "Keine Mahlzeiten verfügbar.";
+
+    const filteredMeals = category === "all"
+        ? meals
+        : meals.filter(meal => meal.category === category);
+    
+
+    if (filteredMeals.length === 0) {
+        document.getElementById("output").textContent = `Keine Mahlzeiten in der Kategorie "${category}" verfügbar.`;
         return;
     }
-    if (category === "all") {
-        const random = meals[Math.floor(Math.random() * meals.length)];
-        console.log(random.category + " - " + random.name + ": " + JSON.stringify(random.ingredients))
-        const ingredientsList = Object.entries(random.ingredients)
+
+    const random = filteredMeals[Math.floor(Math.random() * filteredMeals.length)];
+    console.log(random.category + " - " + random.name + ": " + JSON.stringify(random.ingredients));
+
+    const ingredientsList = random.ingredients
         .map(ingredient => `<li>${ingredient}</li>`)
         .join("");
 
-        document.getElementById("output").innerHTML = `
+    document.getElementById("output").innerHTML = `
         <h2>${random.name}</h2>
         <p>Kategorie: ${random.category}</p>
         <ul>${ingredientsList}</ul>
-        `;
-
-        return random
-    }
+    `;
+    
+    return random;    
 }
 
