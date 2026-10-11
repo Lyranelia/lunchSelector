@@ -5,7 +5,7 @@
 - Klassen initialisieren
 
 - Klasse is da, das' ja klasse
-- Klasse besteht aus "Name", "Kategorie" und {"Zutat", "Zutat 2", ...}
+- Klasse besteht aus "Name", "Kategorie" und ["Zutat", "Zutat 2", ...]
 - neue Instanz der Klasse wird in Array eingetragen
 
 ## wichtig
