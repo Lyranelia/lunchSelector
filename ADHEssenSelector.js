@@ -17,6 +17,20 @@ class Meal {
 }
 
 
+function addMeal(name, category, ingredients) {
+    let newMeal = new Meal (name, category, ingredients);
+    meals.push(newMeal);
+    saveMeals();
+    console.log(`Meal added: ${JSON.stringify(newMeal)}`);
+    return meals;
+}
+
+if (meals.length === 0) {
+    let pumpkinSoup = addMeal("Kürbissuppe", "Suppen", ["500 g Kürbis", "200 g Kartoffel", "150 g Süßkartoffel", "1 Möhre", "1 TL Salz", "1/2 TL Muskat", "2 TL Pfeffer", "1 daumengroßes Stück Ingwer"]);
+    let muesli = addMeal("Müsli", "Frühstück", ["Müsli", "Milch", "Früchte"]);
+}
+
+
 function saveMeals() {
     localStorage.setItem("meals", JSON.stringify(meals))
 }
@@ -88,13 +102,7 @@ if (mealform) {
     addIngredientRow();
 });}
 
-function addMeal(name, category, ingredients) {
-    let newMeal = new Meal (name, category, ingredients);
-    meals.push(newMeal);
-    saveMeals();
-    console.log(`Meal added: ${JSON.stringify(newMeal)}`);
-    return meals;
-}
+
 
 if (importFileInput) {
     document.getElementById("importFile").addEventListener("change", function(event) {  // change tut Dinge, sobald eine Datei ausgewählt wird
@@ -169,12 +177,6 @@ if (mealform) {
 }
 
 
-if (meals.length === 0) {
-    let pumpkinSoup = addMeal("Kürbissuppe", "Suppen", ["500 g Kürbis", "200 g Kartoffel", "150 g Süßkartoffel", "1 Möhre", "1 TL Salz", "1/2 TL Muskat", "2 TL Pfeffer", "1 daumengroßes Stück Ingwer"]);
-    let muesli = addMeal("Müsli", "Frühstück", ["Müsli", "Milch", "Früchte"]);
-}
-
-
 
 function getRandomMeal(category) {
 
@@ -208,4 +210,3 @@ function getRandomMeal(category) {
 
     return random;    
 }
-

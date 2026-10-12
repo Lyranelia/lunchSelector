@@ -22,11 +22,31 @@
         </nav>
     </header>
 
+    <main>
+        <main>
+            <div id="output" class="output"></div>
+        </main>
+    </main>
+
     <footer>
         <!-- <a href="https://github.com/Lyranelia/" target="_blank"><img src="./src/GitHub Logo.png" width="2%" alt="GitHub Logo"> Lyranelia</a>
         <a href="https://lyranelia.itch.io/" target="_blank"><img src="./src/itchio logo.png" width="2%" alt="itch.io Logo"> Lyranelia</a>
         <div class="balken"></div> -->
     </footer>
     <script src="ADHEssenSelector.js"></script>
+    <script>
+        const breakfast = meals.filter(meal => meal.category === 'Frühstück');
+        const output = document.getElementById("output")
+
+            if (!breakfast) {
+                console.log("Kein Frühstück verfügbar.")
+            }
+            else {
+                output.innerHTML = breakfast.map(meal => `
+                    <h2>${meal.name}</h2>
+                    <ul>${meal.ingredients.map(x => `<li>${x}</li>`).join("")}</ul>
+                `);
+            }
+    </script>
 </body>
 </html>
