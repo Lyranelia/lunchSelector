@@ -55,3 +55,4 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
     - aufgerufen wird dann mit var(--variable)
 - css: Pseudoklasse **:empty**, bzw., wie man nur ein nicht leeres Objekt mit :not(:empty){} anspricht und styles setzt
 - wie man .json-Dateien benutzt
+- wiederholt: wie man git und gitHub benutzt

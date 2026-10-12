@@ -1,9 +1,9 @@
-let meals = JSON.parse(localStorage.getItem("meals")) || []
+let meals = JSON.parse(localStorage.getItem("meals")) || []     // [] weil ich sonst, wenn im localStorage nix drin ist, wenn ich also null zurückbekomme, nichts sehe
 
 class Meal {
     name;               // string
     category;           // string
-    ingredients;        // object {"Zutat": "Mengenangabe"} - ne doch nicht, Array reicht
+    ingredients;        // array ["Zutat 1", "Zutat 2"]
     id = 1;
     static nextId = 1;  // Instanz der Klasse, nicht des einzelnen Klässlers
 
@@ -24,12 +24,11 @@ function saveMeals() {
 const mealform = document.querySelector("form");
 const importFileInput = document.querySelector("#importFile");
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+
 function showDropdown() {
     document.getElementById("dropdownContent").classList.toggle("show");
 }
-// Close the dropdown if the user clicks outside of it
+// Dropdown öffnen, wenn Button geklickt wird; schließen, wenn irgendwo geklickt wird
 window.onclick = function(event) {
     if (!event.target.matches('.drpdwnBtn')) {
         let openDropdown = document.getElementById("dropdownContent");       // "dropdowns" holt alle Elemente mit der Klasse "dropdownContent"
@@ -40,6 +39,7 @@ window.onclick = function(event) {
 }
 
 let selectedCategory = null;
+
 function selectCategory(category) {
     selectedCategory = category;
     document.querySelector('.drpdwnBtn').textContent = category; // zeigt Auswahl im Button
@@ -82,7 +82,7 @@ function collectIngredients() {
     return ingredients;
 }
 
-// Direkt beim Laden schon eine erste Zeile anzeigen
+// direkt beim Laden erste Zeile anzeigen
 if (mealform) {
     window.addEventListener("DOMContentLoaded", () => {
     addIngredientRow();
@@ -97,11 +97,13 @@ function addMeal(name, category, ingredients) {
 }
 
 if (importFileInput) {
-    console.log("Import-Listener wurde registriert.");
-    document.getElementById("importFile").addEventListener("change", function(event) {
+    document.getElementById("importFile").addEventListener("change", function(event) {  // change tut Dinge, sobald eine Datei ausgewählt wird
         console.log("Change-Event ausgelöst, Datei:", event.target.files[0]);
-        const file = event.target.files[0];
+
+        const file = event.target.files[0];     // falls mehrere Dateien ausgewähöt sind, nur die erste nehmen
+
         if (!file) return;
+
 
         const reader = new FileReader();
         reader.onload = function(event) {
@@ -131,6 +133,7 @@ if (importFileInput) {
 }
 
 
+// Submit-Button funktional
 if (mealform) {
     mealform.addEventListener("submit", function(event) {
         event.preventDefault();
@@ -157,7 +160,7 @@ if (mealform) {
         // Formular zurücksetzen
         mealform.reset();
         document.getElementById("ingredientsContainer").innerHTML = "";
-        addIngredientRow(); // wieder eine leere Zeile bereitstellen
+        addIngredientRow(); // eine leere Zeile bereitstellen
         document.getElementById("drpdwnBtnAddMeal").textContent = "Kategorie";
         selectedCategory = null;
 
@@ -189,15 +192,15 @@ function getRandomMeal(category) {
     console.log(random.category + " - " + random.name + ": " + JSON.stringify(random.ingredients));
 
     const ingredientsList = random.ingredients
-        .map(ingredient => `<li>${ingredient}</li>`)
-        .join("");
+        .map(ingredient => `<li>${ingredient}</li>`)    // map wandelt die ingredient in html um
+        .join("");                                      // join joint eben zusammen
 
     document.getElementById("output").innerHTML = `
         <h2>${random.name}</h2>
         <p>Kategorie: ${random.category}</p>
         <ul>${ingredientsList}</ul>
     `;
-    
+
     return random;    
 }
 
