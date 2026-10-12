@@ -178,13 +178,18 @@ if (meals.length === 0) {
 
 function getRandomMeal(category) {
 
-    const filteredMeals = category === "all"
+    // wegen Kategorie bzw. Button "Haupmahlzeit", da brauchen wir mehrere Kategorien:
+    const categories = Array.isArray(category)
+        ? category
+        : [category];
+
+    const filteredMeals = categories.includes("all")
         ? meals
-        : meals.filter(meal => meal.category === category);
+        : meals.filter(meal => categories.includes(meal.category));
     
 
     if (filteredMeals.length === 0) {
-        document.getElementById("output").textContent = `Keine Mahlzeiten in der Kategorie "${category}" verfügbar.`;
+        document.getElementById("output").textContent = `Keine Mahlzeiten in der Kategorie "${categories.join(", ")}" verfügbar.`;
         return;
     }
 
