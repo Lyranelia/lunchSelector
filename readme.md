@@ -44,6 +44,7 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - gif für loading hinzufügen, irgendwann
 - css: Länge und Flex der Form und des Kategorie-Buttons checken, da stimmt was nich
 - auch die Schritte und Notizen der Rezepte anzeigen lassen
+- .json nicht nur importieren, sondern auch noch exportieren, das wär doch was
 
 ## Gelernt
 - css: keyframes und animation für einen pulsierenden Button

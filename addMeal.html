@@ -35,7 +35,7 @@
             
             <ul class="dropdownContent" id="dropdownContent" style="width: 18%;">
                 <li><button type="button" onclick="selectCategory('Frühstück')">Frühstück</button></li>
-                <li><button type="button" onclick="selectCategory('Snack')">Snack</button></li>
+                <li><button type="button" onclick="selectCategory('Snacks')">Snack</button></li>
                 <li><button type="button" onclick="selectCategory('Nudeln')">Hauptgericht: Nudeln</button></li>
                 <li><button type="button" onclick="selectCategory('Reis')">Hauptgericht: Reis</button></li>
                 <li><button type="button" onclick="selectCategory('Kartoffeln')">Hauptgericht: Kartoffeln</button></li>
@@ -60,6 +60,8 @@
         <div>
             <input type="file" id="importFile" accept=".json" style="display: none;">
             <button type="button" onclick="document.getElementById('importFile').click()" class="addButton" id="importFileBtn" title="Upload als .json-Datei">Rezepte hochladen</button>
+
+            <button type="button" onclick="exportMeals()" class="addButton" id="exportFileBtn" title="Download als .json-Datei">Rezepte runterladen</button>
         </div>
     </main>
 

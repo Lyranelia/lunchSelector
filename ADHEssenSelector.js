@@ -111,7 +111,7 @@ if (importFileInput) {
     document.getElementById("importFile").addEventListener("change", function(event) {  // change tut Dinge, sobald eine Datei ausgewählt wird
         console.log("Change-Event ausgelöst, Datei:", event.target.files[0]);
 
-        const file = event.target.files[0];     // falls mehrere Dateien ausgewähöt sind, nur die erste nehmen
+        const file = event.target.files[0];     // falls mehrere Dateien ausgewählt sind, nur die erste nehmen
 
         if (!file) return;
 
@@ -141,6 +141,24 @@ if (importFileInput) {
         };
         reader.readAsText(file);
     });
+}
+
+function exportMeals() {
+    if (meals.length === 0) {
+        alert("Es gibt noch keine Rezepte zum Exportieren.");
+        return;
+    }
+
+    const recipes = JSON.stringify(meals, null, 2);
+    const blob = new Blob([recipes], { type: "application/json" });     // blob: binary large object
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "ADHEssen-rezepte.json";
+    link.click();
+
+    URL.revokeObjectURL(url);
 }
 
 
