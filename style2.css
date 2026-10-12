@@ -11,6 +11,11 @@
     src: url(.\\src\\FuturaHand.ttf) format('truetype');
     font-display: swap;
 }
+@font-face {
+    font-family: 'CrayonLibre';
+    src: url(.\\src\\CrayonLibre.ttf) format('truetype');
+    font-display: swap;
+}
 
 
     /*  ================================================================
@@ -21,7 +26,7 @@
 }
 body{
     margin: 0;
-    font-family: 'FuturaHand', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'CrayonLibre', 'Chalkchalk', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*  ================================================================
@@ -46,7 +51,7 @@ body{
 header{
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: 'FuturaHand', 'Chalk', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'CrayonLibre', 'Chalk', 'Chalkchalk', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.3em;
     text-align: left;
     margin: 0;
@@ -149,6 +154,7 @@ body::before{
     padding: 8px;
     font-size: 12.5pt;
     background-color: var(--color-bg);
+    font-family: 'CrayonLibre';
     transition: background-color 0.4s ease;
 }
 
@@ -234,6 +240,7 @@ body::before{
     border: none;
     text-align: left;
     font-size: 12pt;
+    font-family: 'CrayonLibre';
 }
 .dropdownContent.show button:hover{
     background-color: var(--color-bg-hover-and-input);

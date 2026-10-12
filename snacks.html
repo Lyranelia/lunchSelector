@@ -43,7 +43,7 @@
                 output.innerHTML = snacks.map(meal => `
                     <h2>${meal.name}</h2>
                     <ul>${meal.ingredients.map(x => `<li>${x}</li>`).join("")}</ul>
-                `);
+                `).join("");
             }
     </script>
 </body>

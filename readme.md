@@ -38,7 +38,7 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - Rezepte jetzt auch auf allen (bisher) beiden Seiten verfügbar
 - Zufallsgenerator funktioniert (mit Live-Server)
 - die anderen Seiten zeigen jetzt Rezepte an, yay
-- neue Schriftarten rausgesucht (natürlich 100 % kostenlos: https://www.dafont.com/de/chalk.font und https://www.dafont.com/de/futurahand.font)
+- neue Schriftarten rausgesucht (natürlich 100 % kostenlos: https://www.dafont.com/de/chalk.font, https://www.dafont.com/de/futurahand.font, https://www.dafont.com/de/crayon-libre.font?l[]=10&l[]=1&text=%E4%F6%FC)
 
 ## To-Do
 - gif für loading hinzufügen, irgendwann

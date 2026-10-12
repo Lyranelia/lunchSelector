@@ -42,9 +42,8 @@
             else {
                 output.innerHTML = lunch.map(meal => `
                     <h2>${meal.name}</h2>
-                    <p>Kategorie: ${meal.category}</p>
                     <ul>${meal.ingredients.map(x => `<li>${x}</li>`).join("")}</ul>
-                `);
+                `).join("");
             }
     </script>
 </body>
