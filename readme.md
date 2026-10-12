@@ -37,12 +37,12 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - .json-Upload möglich gemacht
 - Rezepte jetzt auch auf allen (bisher) beiden Seiten verfügbar
 - Zufallsgenerator funktioniert (mit Live-Server)
+- die anderen Seiten zeigen jetzt Rezepte an, yay
+- neue Schriftarten rausgesucht (natürlich 100 % kostenlos: https://www.dafont.com/de/chalk.font und https://www.dafont.com/de/futurahand.font)
 
 ## To-Do
 - gif für loading hinzufügen, irgendwann
-- nachgucken, was genau .querySelector() macht
 - css: Länge und Flex der Form und des Kategorie-Buttons checken, da stimmt was nich
-- die anderen Seiten mal einfügen
 - auch die Schritte und Notizen der Rezepte anzeigen lassen
 
 ## Gelernt
@@ -56,3 +56,4 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - css: Pseudoklasse **:empty**, bzw., wie man nur ein nicht leeres Objekt mit :not(:empty){} anspricht und styles setzt
 - wie man .json-Dateien benutzt
 - wiederholt: wie man git und gitHub benutzt
+- wie man Fonts in css einbindet

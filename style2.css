@@ -1,4 +1,19 @@
 /*  ================================================================
+    FONT
+    ================================================================ */
+@font-face {
+    font-family: 'Chalk';
+    src: url(.\\src\\Chalk.otf) format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FuturaHand';
+    src: url(.\\src\\FuturaHand.ttf) format('truetype');
+    font-display: swap;
+}
+
+
+    /*  ================================================================
     RESET & BASICS
     ================================================================ */
 *{
@@ -6,7 +21,7 @@
 }
 body{
     margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'FuturaHand', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*  ================================================================
@@ -31,6 +46,8 @@ body{
 header{
     background-color: var(--color-bg);
     color: var(--color-text);
+    font-family: 'FuturaHand', 'Chalk', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
     text-align: left;
     margin: 0;
     box-shadow: var(--shadow);

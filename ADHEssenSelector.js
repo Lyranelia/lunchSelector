@@ -1,5 +1,6 @@
 let meals = JSON.parse(localStorage.getItem("meals")) || []     // [] weil ich sonst, wenn im localStorage nix drin ist, wenn ich also null zurückbekomme, nichts sehe
 
+
 class Meal {
     name;               // string
     category;           // string
@@ -17,6 +18,7 @@ class Meal {
 }
 
 
+
 function addMeal(name, category, ingredients) {
     let newMeal = new Meal (name, category, ingredients);
     meals.push(newMeal);
@@ -31,17 +33,19 @@ if (meals.length === 0) {
 }
 
 
-function saveMeals() {
-    localStorage.setItem("meals", JSON.stringify(meals))
-}
 
 const mealform = document.querySelector("form");
 const importFileInput = document.querySelector("#importFile");
 
 
+function saveMeals() {
+    localStorage.setItem("meals", JSON.stringify(meals))
+}
+
 function showDropdown() {
     document.getElementById("dropdownContent").classList.toggle("show");
 }
+
 // Dropdown öffnen, wenn Button geklickt wird; schließen, wenn irgendwo geklickt wird
 window.onclick = function(event) {
     if (!event.target.matches('.drpdwnBtn')) {
@@ -101,7 +105,6 @@ if (mealform) {
     window.addEventListener("DOMContentLoaded", () => {
     addIngredientRow();
 });}
-
 
 
 if (importFileInput) {
