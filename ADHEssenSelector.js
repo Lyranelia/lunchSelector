@@ -225,7 +225,6 @@ function getRandomMeal(category) {
 
     document.getElementById("output").innerHTML = `
         <h2>${random.name}</h2>
-        <p>Kategorie: ${random.category}</p>
         <ul>${ingredientsList}</ul>
     `;
 
