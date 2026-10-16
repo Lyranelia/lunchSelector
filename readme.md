@@ -39,12 +39,12 @@ Scheinbar kann ich den select-tag bzw. dessen options nicht ordentlich mit einem
 - Zufallsgenerator funktioniert (mit Live-Server)
 - die anderen Seiten zeigen jetzt Rezepte an, yay
 - neue Schriftarten rausgesucht (natürlich 100 % kostenlos: https://www.dafont.com/de/chalk.font, https://www.dafont.com/de/futurahand.font, https://www.dafont.com/de/crayon-libre.font?l[]=10&l[]=1&text=%E4%F6%FC)
+- Jason kann jetzt auch exportiert werden, nicht nur importiert
 
 ## To-Do
 - gif für loading hinzufügen, irgendwann
 - css: Länge und Flex der Form und des Kategorie-Buttons checken, da stimmt was nich
 - auch die Schritte und Notizen der Rezepte anzeigen lassen
-- .json nicht nur importieren, sondern auch noch exportieren, das wär doch was
 
 ## Gelernt
 - css: keyframes und animation für einen pulsierenden Button

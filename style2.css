@@ -58,11 +58,13 @@ header{
     box-shadow: var(--shadow);
     opacity: 0.72;
 }
-header h1{
+header .header{
     padding: 25px;
-    padding-top: 20px;
-    padding-bottom: 15px;
+    /* padding-top: 20px;
+    padding-bottom: 15px; */
     margin: 0;
+    text-decoration: none;
+    color: var(--color-text-dark);
 }
 .balken{
     width: 100%;
@@ -124,12 +126,22 @@ body::before{
     position: fixed;
     inset: 0;
     z-index: -1;
-    /* height: 100vh; */
     background-image: url(./src/olive-oil-with-colorful-vegetables-grunge-textured-background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
+}
+
+
+/*  ================================================================
+    HOMEPAGE
+    ================================================================ */
+.homepage{
+    font-size: 1.1em;
+}
+.homepage p{
+    line-height: 1.5;
 }
 
 /* ================================================================
@@ -320,9 +332,9 @@ form label{
 
 
 /*  ================================================================
-    RECIPE-OUTPUT
+    RECIPE-OUTPUT, HOMEPAGE
     ================================================================ */
-.output:not(:empty){
+.output:not(:empty), .homepage{
     padding: 4%;
     padding-top: 1%;
     background-color: #e1e0de8e;
@@ -330,6 +342,9 @@ form label{
     border-radius: 20px;
     width: fit-content;
     margin: 1%;
+}
+.homepage{
+    width: 60%;
 }
 
 /*  ================================================================
